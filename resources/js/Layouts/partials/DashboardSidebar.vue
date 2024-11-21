@@ -145,7 +145,7 @@ onMounted(() => setActiveMenu(page.url));
                             </a>
                         </li>
                         <li>
-                            <a href="https://github.com/p2squareb/laravel-inertia-vue-boilerplate" target="_blank" 
+                            <a href="https://github.com/p2squareb/livt-demo" target="_blank" 
                                 class="flex items-center justify-start w-full p-3 text-base text-gray-900 rounded-lg hover:bg-gray-100 group dark:text-gray-200 dark:hover:bg-gray-900"
                             >
                                 <Icon icon="github" class="w-6 h-6 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />

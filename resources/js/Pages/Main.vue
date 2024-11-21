@@ -23,7 +23,7 @@ defineOptions({
                 <p class="mb-7 text-base font-normal text-gray-700 dark:text-gray-300 lg:text-center xl:px-60">
                     위의 스크립트로 개발된 Boilerplate입니다. <br>
                     반응형으로 개발되었으며 UI는 Flowbite를 참고하였습니다.<br>
-                    소스코드는 우측 상단 깃헙 아이콘을 클릭하세요.
+                    소스코드는 우측 상단 깃헙 아이콘을 클릭하세요!
                 </p>
                 <p class="mb-7 text-md font-normal text-gray-700 dark:text-gray-300 lg:text-center xl:px-60">
                     Laravel 11 (PHP 8.2 이상), Node.js(22.9.0), Inertia, Vue3, Tailwind, PostgreSql(14.13), Redis<br>
