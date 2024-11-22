@@ -17,10 +17,12 @@ const localCategory = ref(props.category);
 const localSearchString = ref(props.searchString);
 const localSortBy = ref(props.sortBy);
 
-const categoryOptions = [
-    { value: '', name: '전체' },
-    ...props.boardCategory.split(',').map(category => ({ value: category, name: category }))
-];
+const categoryOptions = props.boardUseCategory 
+    ? [
+        { value: '', name: '전체' },
+        ...props.boardCategory.split(',').map(category => ({ value: category, name: category }))
+    ]
+    : [];
 
 watch(localCategory, (newValue) => {
     emit('update:category', newValue);

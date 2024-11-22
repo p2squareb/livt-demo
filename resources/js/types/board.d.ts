@@ -45,6 +45,7 @@ export interface Write {
     has_video: boolean;
     is_delete: boolean;
     deleted_at: string;
+    list_file: string;
     user: User;
     board: Board;
     user_rate_up: boolean;

@@ -74,7 +74,7 @@ const submit = () => {
                         class="py-[6px]"
                         v-model="form.skin"
                         :placeholder="'스킨 선택'"
-                        :options="[{value: 'card', name: '카드형'}, {value: 'album', name: '앨범형'}, {value: 'faq', name: 'FAQ'}]" 
+                        :options="[{value: 'card', name: '카드형'}]" 
                     />
                     <InputError :message="form.errors.skin" />
                 </div>
