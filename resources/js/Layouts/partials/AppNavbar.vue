@@ -74,7 +74,7 @@ const toggleMobileMenu = () => {
                 <div class="flex items-center justify-between">
                     <Link href="/" class="flex"><ApplicationLogo /></Link>
                 </div>
-                <ul id="flowbiteMenu" class="flex-col hidden lg:flex-row lg:self-center lg:py-0 lg:flex ml-12">
+                <ul class="flex-col hidden lg:flex-row lg:self-center lg:py-0 lg:flex ml-12">
                     <li class="mb-3 lg:px-2 xl:px-2 lg:mb-0">
                         <Link :href="route('write.list', {tableId: 'default'})" class="text-base font-medium text-gray-900 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-500">Board</Link>
                     </li>
