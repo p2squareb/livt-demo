@@ -19,10 +19,12 @@ const props = defineProps<{
     request: Record<string, string>;
 }>();
 
-const categoryOptions = [
-    { value: '', name: '카테고리 선택' },
-    ...props.board.category_list.split(',').map(category => ({ value: category, name: category }))
-];
+const categoryOptions = props.board.use_category 
+    ? [
+        { value: '', name: '카테고리 선택' },
+        ...props.board.category_list.split(',').map(category => ({ value: category, name: category }))
+    ]
+    : [];
 
 const form = useForm({
     category: '',
@@ -50,7 +52,7 @@ const submit = () => {
         <form @submit.prevent="submit">
             <div class="px-1 space-y-6">
                 <div class="grid grid-cols-6 gap-6 mt-6">
-                    <div class="col-span-6 sm:col-span-6">
+                    <div v-if="props.board.use_category" class="col-span-6 sm:col-span-6">
                         <Selectbox 
                             class="py-[10px]"
                             v-model="form.category"
@@ -67,7 +69,7 @@ const submit = () => {
                         <TextEditor v-model="form.content" :textareaMinHeight="'300'"/>
                         <InputError :message="form.errors.content" />
                     </div>
-                    <div class="col-span-6 sm:col-span-6">
+                    <div v-if="props.board.use_tags" class="col-span-6 sm:col-span-6">
                         <TagInput v-model="form.tags" />
                     </div>
                 </div> 

@@ -94,7 +94,7 @@ const listMore = async () => {
                 </div>
             </template>
         </div>
-        <div v-if="$page.props.auth.user" class="sticky bottom-[23px] z-200">
+        <div v-if="$page.props.auth.user && $page.props.auth.user.group_level >= props.board.write_level" class="sticky bottom-[23px] z-200">
             <div class="absolute bottom-0 flex flex-col justify-center items-end gap-[8px] right-0 xl:right-[-60px] w-max-content">
                 <button @click="router.get(route('write.create', {tableId: props.board.table_id}))" class="flex items-center justify-center text-white hover:text-blue-500 rounded-full w-12 h-12 bg-blue-700 hover:bg-stone-900 border border-gray-900 hover:border-blue-500 focus:outline-none">
                     <Icon icon="pencil" class="w-5 h-5" />
