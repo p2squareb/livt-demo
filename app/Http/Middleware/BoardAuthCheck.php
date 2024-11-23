@@ -41,7 +41,7 @@ class BoardAuthCheck
                 }
             }
         } else if ($access === 'create') {
-            if (!Auth::user()->hasVerifiedEmail()) {
+            if (!Auth::check() || !Auth::user()->email_verified_at) {
                 return redirect()->route('verification.notice');
             }
 
@@ -60,7 +60,7 @@ class BoardAuthCheck
                 abort(404);
             }
         } else if ($access === 'update') {
-            if (!Auth::user()->hasVerifiedEmail()) {
+            if (!Auth::check() || !Auth::user()->email_verified_at) {
                 return redirect()->route('verification.notice');
             }
 
@@ -79,8 +79,8 @@ class BoardAuthCheck
                 }
             }
         } else if ($access === 'comment-update') {
-            if (!Auth::user()->hasVerifiedEmail()) {
-                return redirect()->route('verification.notice');
+            if (!Auth::check() || !Auth::user()->email_verified_at) {
+                return redirect()->route('verification.notice'); 
             }
 
             $commentId = $request->segment(5);
