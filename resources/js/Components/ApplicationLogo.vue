@@ -5,5 +5,5 @@ const appName: any = usePage().props.appName;
 
 <template>
     <img src="/images/livt-logo.png" class="h-7 mr-2" :alt="appName" />
-    <span class="self-center text-2xl font-bold whitespace-nowrap dark:text-white tracking-widest">LIVT</span>
+    <span class="self-center text-2xl font-bold whitespace-nowrap dark:text-white tracking-widest">{{ appName }}</span>
 </template>
