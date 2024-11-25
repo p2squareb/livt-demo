@@ -2,7 +2,7 @@
 import {ref} from "vue";
 import {useForm} from '@inertiajs/vue3';
 import ButtonColor from '@/Components/ButtonColor.vue';
-import ApplicationLogo from "@/Components/ApplicationLogo.vue";
+import ApplicationLogo from "@/Components/Include/ApplicationLogo.vue";
 import LoadingOverlay from "@/Components/LoadingOverlay.vue";
 
 const isLoading = ref(false);

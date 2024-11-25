@@ -5,7 +5,7 @@ import InputError from '@/Components/InputError.vue';
 import InputLabel from '@/Components/InputLabel.vue';
 import ButtonColor from '@/Components/ButtonColor.vue';
 import TextInput from '@/Components/TextInput.vue';
-import ApplicationLogo from "@/Components/ApplicationLogo.vue";
+import ApplicationLogo from "@/Components/Include/ApplicationLogo.vue";
 import Checkbox from "@/Components/Checkbox.vue";
 import LoadingOverlay from "@/Components/LoadingOverlay.vue";
 

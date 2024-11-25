@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import ApplicationLogo from "@/Components/ApplicationLogo.vue";
+import ApplicationLogo from "@/Components/Include/ApplicationLogo.vue";
 import DropdownLink from "@/Components/DropdownLink.vue";
 import Dropdown from "@/Components/Dropdown.vue";
 import { switchTheme, getTheme } from "@/theme";

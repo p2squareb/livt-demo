@@ -4,7 +4,7 @@ import InputLabel from '@/Components/InputLabel.vue';
 import ButtonColor from '@/Components/ButtonColor.vue';
 import TextInput from '@/Components/TextInput.vue';
 import { useForm } from '@inertiajs/vue3';
-import ApplicationLogo from "@/Components/ApplicationLogo.vue";
+import ApplicationLogo from "@/Components/Include/ApplicationLogo.vue";
 
 defineProps<{
     status?: string;
