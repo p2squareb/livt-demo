@@ -2,7 +2,7 @@
 import { usePage } from '@inertiajs/vue3';
 import dayjs from "dayjs";
 import { useForm } from "@inertiajs/vue3";
-import InputError from "@/Components/InputError.vue";
+import InputError from "@/Components/Form/InputError.vue";
 
 const page = usePage();
 

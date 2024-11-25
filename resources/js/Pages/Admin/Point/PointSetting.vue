@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import DashboardLayout from "@/Layouts/DashboardLayout.vue";
 import { useForm } from "@inertiajs/vue3";
-import InputLabel from "@/Components/InputLabel.vue";
+import InputLabel from "@/Components/Form/InputLabel.vue";
 import Breadcrumb from "@/Pages/Admin/Partials/Breadcrumb.vue";
-import Radio from "@/Components/Radio.vue";
+import Radio from "@/Components/Form/Radio.vue";
 import { notify } from "@/Components/Toastify";
 import { refInputClasses } from "@/utils/helper";
 

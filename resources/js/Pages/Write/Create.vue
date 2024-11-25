@@ -2,9 +2,9 @@
 import { Link, router } from '@inertiajs/vue3';
 import { useForm } from '@inertiajs/vue3';
 import AppLayout from "@/Layouts/AppLayout.vue";
-import TextInput from "@/Components/TextInput.vue";
-import InputError from "@/Components/InputError.vue";
-import Selectbox from "@/Components/Selectbox.vue";
+import TextInput from "@/Components/Form/TextInput.vue";
+import InputError from "@/Components/Form/InputError.vue";
+import Selectbox from "@/Components/Form/Selectbox.vue";
 import TextEditor from "@/Components/TextEditor.vue";
 import TagInput from "@/Components/TagInput.vue";
 import ButtonColor from '@/Components/ButtonColor.vue';

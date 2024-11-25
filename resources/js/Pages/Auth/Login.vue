@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import Checkbox from '@/Components/Checkbox.vue';
-import InputError from '@/Components/InputError.vue';
-import InputLabel from '@/Components/InputLabel.vue';
+import Checkbox from '@/Components/Form/Checkbox.vue';
+import InputError from '@/Components/Form/InputError.vue';
+import InputLabel from '@/Components/Form/InputLabel.vue';
 import ButtonColor from '@/Components/ButtonColor.vue';
-import TextInput from '@/Components/TextInput.vue';
+import TextInput from '@/Components/Form/TextInput.vue';
 import {router, useForm} from '@inertiajs/vue3';
 import ApplicationLogo from "@/Components/Include/ApplicationLogo.vue";
 

@@ -1,11 +1,11 @@
 <script setup lang="ts">
 import DashboardLayout from "@/Layouts/DashboardLayout.vue";
 import {useForm} from "@inertiajs/vue3";
-import TextInput from "@/Components/TextInput.vue";
-import InputLabel from "@/Components/InputLabel.vue";
-import InputError from "@/Components/InputError.vue";
+import TextInput from "@/Components/Form/TextInput.vue";
+import InputLabel from "@/Components/Form/InputLabel.vue";
+import InputError from "@/Components/Form/InputError.vue";
 import Breadcrumb from "@/Pages/Admin/Partials/Breadcrumb.vue";
-import Radio from "@/Components/Radio.vue";
+import Radio from "@/Components/Form/Radio.vue";
 import Tooltip from "@/Components/Tooltip.vue";
 import {notify} from "@/Components/Toastify";
 

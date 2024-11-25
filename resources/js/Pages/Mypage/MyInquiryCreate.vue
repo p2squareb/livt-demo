@@ -1,10 +1,10 @@
 <script setup lang="ts">
 import { useForm } from '@inertiajs/vue3';
 import { notify } from "@/Components/Toastify";
-import InputError from '@/Components/InputError.vue';
-import Selectbox from '@/Components/Selectbox.vue';
+import InputError from '@/Components/Form/InputError.vue';
+import Selectbox from '@/Components/Form/Selectbox.vue';
 import ButtonColor from '@/Components/ButtonColor.vue';
-import TextInput from '@/Components/TextInput.vue';
+import TextInput from '@/Components/Form/TextInput.vue';
 import TextEditor from '@/Components/TextEditor.vue';
 import { Category } from '@/types/board';
 

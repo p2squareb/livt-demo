@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref, watch } from "vue";
 import debounce from 'lodash.debounce';
-import Selectbox from '@/Components/Selectbox.vue';
+import Selectbox from '@/Components/Form/Selectbox.vue';
 
 const props = defineProps<{
     boardUseCategory: boolean;

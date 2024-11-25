@@ -5,7 +5,7 @@ import dayjs from "dayjs";
 import debounce from 'lodash.debounce';
 import DashboardLayout from "@/Layouts/DashboardLayout.vue";
 import Breadcrumb from "@/Pages/Admin/Partials/Breadcrumb.vue";
-import Selectbox from "@/Components/Selectbox.vue";
+import Selectbox from "@/Components/Form/Selectbox.vue";
 import PaginationLinks from "@/Components/PaginationLinks.vue";
 import BoardInquiryRead from "@/Pages/Admin/Board/BoardInquiryRead.vue";
 import Modal from "@/Components/Modal.vue";

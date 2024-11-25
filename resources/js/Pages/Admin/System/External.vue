@@ -3,9 +3,9 @@ import DashboardLayout from "@/Layouts/DashboardLayout.vue";
 import Breadcrumb from "@/Pages/Admin/Partials/Breadcrumb.vue";
 import {useForm} from "@inertiajs/vue3";
 import {notify} from "@/Components/Toastify";
-import InputLabel from "@/Components/InputLabel.vue";
-import TextInput from "@/Components/TextInput.vue";
-import CheckboxToggle from "@/Components/CheckboxToggle.vue";
+import InputLabel from "@/Components/Form/InputLabel.vue";
+import TextInput from "@/Components/Form/TextInput.vue";
+import CheckboxToggle from "@/Components/Form/CheckboxToggle.vue";
 
 defineOptions({
     layout: DashboardLayout,

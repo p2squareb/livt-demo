@@ -6,7 +6,7 @@ import debounce from 'lodash.debounce';
 import DashboardLayout from "@/Layouts/DashboardLayout.vue";
 import Breadcrumb from "@/Pages/Admin/Partials/Breadcrumb.vue";
 import ButtonColor from "@/Components/ButtonColor.vue";
-import Selectbox from "@/Components/Selectbox.vue";
+import Selectbox from "@/Components/Form/Selectbox.vue";
 import PaginationLinks from "@/Components/PaginationLinks.vue";
 import Modal from "@/Components/Modal.vue";
 import PointCreate from "@/Pages/Admin/Point/PointCreate.vue";

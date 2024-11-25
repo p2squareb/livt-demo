@@ -3,7 +3,7 @@ import { usePage, router } from '@inertiajs/vue3';
 import dayjs from "dayjs";
 import AppLayout from "@/Layouts/AppLayout.vue";
 import { useForm } from "@inertiajs/vue3";
-import InputError from "@/Components/InputError.vue";
+import InputError from "@/Components/Form/InputError.vue";
 import { LoginRecord } from '@/types/user';
 
 const props = defineProps<{

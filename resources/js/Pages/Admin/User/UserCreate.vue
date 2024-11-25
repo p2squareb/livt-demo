@@ -2,10 +2,10 @@
 import { ref } from "vue";
 import { useForm } from '@inertiajs/vue3';
 import { notify } from "@/Components/Toastify";
-import InputError from '@/Components/InputError.vue';
-import InputLabel from '@/Components/InputLabel.vue';
+import InputError from '@/Components/Form/InputError.vue';
+import InputLabel from '@/Components/Form/InputLabel.vue';
 import ButtonColor from '@/Components/ButtonColor.vue';
-import TextInput from '@/Components/TextInput.vue';
+import TextInput from '@/Components/Form/TextInput.vue';
 
 const emit = defineEmits(['handleModalClose'])
 function closeModal (refresh: boolean = false) {
