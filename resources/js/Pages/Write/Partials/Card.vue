@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { Link } from '@inertiajs/vue3';
-import ProfileIcon from "@/Components/ProfileIcon.vue";
+import ProfileIcon from "@/Components/Include/ProfileIcon.vue";
 import StatOption from "./StatOption.vue";
 import { formatRelativeTime } from "@/utils/helper";
 import { Write, Board } from "@/types/board";

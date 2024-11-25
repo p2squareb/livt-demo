@@ -4,7 +4,7 @@ import { usePage, router } from '@inertiajs/vue3';
 import axios from 'axios';
 import AppLayout from "@/Layouts/AppLayout.vue";
 import MyHeader from "@/Pages/Mypage/MyHeader.vue";
-import ProfileIcon from "@/Components/ProfileIcon.vue";
+import ProfileIcon from "@/Components/Include/ProfileIcon.vue";
 import ButtonColor from '@/Components/ButtonColor.vue';
 import SpeedDial from '@/Components/SpeedDial.vue';
 import Modal from "@/Components/Modal.vue";

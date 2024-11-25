@@ -3,7 +3,7 @@ import { ref } from 'vue';
 import { usePage } from '@inertiajs/vue3';
 import AppLayout from "@/Layouts/AppLayout.vue";
 import MyHeader from "@/Pages/Mypage/MyHeader.vue";
-import ProfileIcon from "@/Components/ProfileIcon.vue";
+import ProfileIcon from "@/Components/Include/ProfileIcon.vue";
 import StatOption from "@/Pages/Write/Partials/StatOption.vue";
 import SpeedDial from '@/Components/SpeedDial.vue';
 import Modal from "@/Components/Modal.vue";

@@ -2,7 +2,7 @@
 import { ref } from 'vue';
 import { router } from '@inertiajs/vue3';
 import AppLayout from "@/Layouts/AppLayout.vue";
-import ProfileIcon from "@/Components/ProfileIcon.vue";
+import ProfileIcon from "@/Components/Include/ProfileIcon.vue";
 import StatOption from "@/Pages/Write/Partials/StatOption.vue";
 import Comment from "@/Pages/Write/Comment.vue";
 import Dropdown from "@/Components/Dropdown.vue";

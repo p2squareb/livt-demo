@@ -7,7 +7,7 @@ import ButtonColor from '@/Components/ButtonColor.vue';
 import TextInput from '@/Components/TextInput.vue';
 import ApplicationLogo from "@/Components/Include/ApplicationLogo.vue";
 import Checkbox from "@/Components/Checkbox.vue";
-import LoadingOverlay from "@/Components/LoadingOverlay.vue";
+import LoadingOverlay from "@/Components/Include/LoadingOverlay.vue";
 
 const isLoading = ref(false);
 
