@@ -5,7 +5,7 @@ import dayjs from "dayjs";
 import debounce from 'lodash.debounce';
 import DashboardLayout from "@/Layouts/DashboardLayout.vue";
 import Breadcrumb from "@/Pages/Admin/Partials/Breadcrumb.vue";
-import ButtonColor from "@/Components/ButtonColor.vue";
+import ButtonColor from "@/Components/Include/ButtonColor.vue";
 import Selectbox from "@/Components/Form/Selectbox.vue";
 import PaginationLinks from "@/Components/PaginationLinks.vue";
 import { PaginatedCommentList, Board } from "@/types/board";

@@ -2,7 +2,7 @@
 import { ref, onMounted } from 'vue';
 import { router, usePage } from '@inertiajs/vue3';
 import DialogModal from '@/Components/DialogModal.vue';
-import ButtonColor from '@/Components/ButtonColor.vue';
+import ButtonColor from '@/Components/Include/ButtonColor.vue';
 import { notify } from '@/Components/Toastify';
 
 const props = defineProps<{

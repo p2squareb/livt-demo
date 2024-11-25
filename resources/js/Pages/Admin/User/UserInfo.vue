@@ -3,7 +3,7 @@ import { ref, onMounted } from "vue";
 import axios from "axios";
 import dayjs from "dayjs";
 import { notify } from "@/Components/Toastify";
-import ButtonColor from '@/Components/ButtonColor.vue';
+import ButtonColor from '@/Components/Include/ButtonColor.vue';
 import LoadingOverlay from "@/Components/Include/LoadingOverlay.vue";
 import { User, UserProhibit, UserDormant } from "@/types/user";
 

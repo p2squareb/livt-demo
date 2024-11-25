@@ -3,7 +3,7 @@ import { ref, watch } from 'vue';
 import { useForm } from '@inertiajs/vue3';
 import InputError from '@/Components/Form/InputError.vue';
 import InputLabel from '@/Components/Form/InputLabel.vue';
-import ButtonColor from '@/Components/ButtonColor.vue';
+import ButtonColor from '@/Components/Include/ButtonColor.vue';
 import Selectbox from '@/Components/Form/Selectbox.vue';
 import Radio from '@/Components/Form/Radio.vue';
 import { calculateUntilDate, limitTextLengthCount } from '@/utils/helper';

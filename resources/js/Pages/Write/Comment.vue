@@ -3,7 +3,7 @@ import axios from 'axios';
 import { defineProps, ref } from 'vue'
 import { useForm, usePage, router } from '@inertiajs/vue3'
 import ProfileIcon from '@/Components/Include/ProfileIcon.vue';
-import ButtonColor from '@/Components/ButtonColor.vue';
+import ButtonColor from '@/Components/Include/ButtonColor.vue';
 import Dropdown from '@/Components/Dropdown.vue';
 import DialogModal from "@/Components/DialogModal.vue";
 import Report from '@/Pages/Write/Partials/Report.vue';

@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import {ref} from "vue";
 import {useForm} from '@inertiajs/vue3';
-import ButtonColor from '@/Components/ButtonColor.vue';
+import ButtonColor from '@/Components/Include/ButtonColor.vue';
 import ApplicationLogo from "@/Components/Include/ApplicationLogo.vue";
 import LoadingOverlay from "@/Components/Include/LoadingOverlay.vue";
 

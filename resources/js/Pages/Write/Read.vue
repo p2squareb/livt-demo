@@ -7,7 +7,7 @@ import StatOption from "@/Pages/Write/Partials/StatOption.vue";
 import Comment from "@/Pages/Write/Comment.vue";
 import Dropdown from "@/Components/Dropdown.vue";
 import DialogModal from "@/Components/DialogModal.vue";
-import ButtonColor from "@/Components/ButtonColor.vue";
+import ButtonColor from "@/Components/Include/ButtonColor.vue";
 import Report from "@/Pages/Write/Partials/Report.vue";
 import { Board, Write, PaginatedCommentList } from "@/types/board";
 import { formatRelativeTime, goBack } from "@/utils/helper";

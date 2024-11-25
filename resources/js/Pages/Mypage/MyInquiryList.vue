@@ -4,7 +4,7 @@ import { usePage } from '@inertiajs/vue3';
 import axios from 'axios';
 import AppLayout from "@/Layouts/AppLayout.vue";
 import MyHeader from "@/Pages/Mypage/MyHeader.vue";
-import ButtonColor from '@/Components/ButtonColor.vue';
+import ButtonColor from '@/Components/Include/ButtonColor.vue';
 import Modal from '@/Components/Modal.vue';
 import MyInquiryCreate from '@/Pages/Mypage/MyInquiryCreate.vue';
 import SpeedDial from '@/Components/SpeedDial.vue';

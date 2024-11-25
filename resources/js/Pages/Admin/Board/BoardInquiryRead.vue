@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { useForm } from '@inertiajs/vue3';
 import { notify } from "@/Components/Toastify";
-import ButtonColor from '@/Components/ButtonColor.vue';
+import ButtonColor from '@/Components/Include/ButtonColor.vue';
 import TextEditor from '@/Components/TextEditor.vue';
 import { Inquiry } from "@/types/board";
 

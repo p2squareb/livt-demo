@@ -5,7 +5,7 @@ import { notify } from "@/Components/Toastify";
 import DashboardLayout from "@/Layouts/DashboardLayout.vue";
 import Breadcrumb from "@/Pages/Admin/Partials/Breadcrumb.vue";
 import Modal from "@/Components/Modal.vue";
-import ButtonColor from "@/Components/ButtonColor.vue";
+import ButtonColor from "@/Components/Include/ButtonColor.vue";
 import UserGroupCreate from "@/Pages/Admin/User/UserGroupCreate.vue";
 import UserGroupUpdate from "@/Pages/Admin/User/UserGroupUpdate.vue";
 import { UserGroup } from "@/types/user";

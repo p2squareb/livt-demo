@@ -8,7 +8,7 @@ import DashboardLayout from "@/Layouts/DashboardLayout.vue";
 import Breadcrumb from "@/Pages/Admin/Partials/Breadcrumb.vue";
 import Selectbox from "@/Components/Form/Selectbox.vue";
 import Checkbox from "@/Components/Form/Checkbox.vue";
-import ButtonColor from "@/Components/ButtonColor.vue";
+import ButtonColor from "@/Components/Include/ButtonColor.vue";
 import PaginationLinks from "@/Components/PaginationLinks.vue";
 import UserCreate from "@/Pages/Admin/User/UserCreate.vue";
 import PointCreate from "@/Pages/Admin/Point/PointCreate.vue";

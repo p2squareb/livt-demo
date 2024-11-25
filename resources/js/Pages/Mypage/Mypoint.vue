@@ -2,7 +2,7 @@
 import { ref, onMounted } from 'vue'
 import axios from 'axios'
 import dayjs from 'dayjs'
-import ButtonColor from '@/Components/ButtonColor.vue'
+import ButtonColor from '@/Components/Include/ButtonColor.vue'
 import { Point } from '@/types/user';
 
 const points = ref<Point[]>([])

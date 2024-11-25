@@ -7,7 +7,7 @@ import InputError from "@/Components/Form/InputError.vue";
 import Selectbox from "@/Components/Form/Selectbox.vue";
 import TextEditor from "@/Components/TextEditor.vue";
 import TagInput from "@/Components/TagInput.vue";
-import ButtonColor from '@/Components/ButtonColor.vue';
+import ButtonColor from '@/Components/Include/ButtonColor.vue';
 import { Board } from "@/types/board";
 import { goBack } from "@/utils/helper";
 defineOptions({

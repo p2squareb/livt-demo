@@ -5,7 +5,7 @@ import { notify } from "@/Components/Toastify";
 import { router } from '@inertiajs/vue3';
 import DashboardLayout from "@/Layouts/DashboardLayout.vue";
 import Breadcrumb from "@/Pages/Admin/Partials/Breadcrumb.vue";
-import ButtonColor from "@/Components/ButtonColor.vue";
+import ButtonColor from "@/Components/Include/ButtonColor.vue";
 import BoardCreate from "@/Pages/Admin/Board/BoardCreate.vue";
 import BoardUpdate from "@/Pages/Admin/Board/BoardUpdate.vue";
 import Modal from "@/Components/Modal.vue";

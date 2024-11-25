@@ -6,7 +6,7 @@ import AppLayout from "@/Layouts/AppLayout.vue";
 import MyHeader from "@/Pages/Mypage/MyHeader.vue";
 import ProfileIcon from "@/Components/Include/ProfileIcon.vue";
 import StatOption from "@/Pages/Write/Partials/StatOption.vue";
-import ButtonColor from '@/Components/ButtonColor.vue';
+import ButtonColor from '@/Components/Include/ButtonColor.vue';
 import SpeedDial from '@/Components/SpeedDial.vue';
 import Modal from "@/Components/Modal.vue";
 import Mypoint from "@/Pages/Mypage/Mypoint.vue";

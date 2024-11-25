@@ -5,7 +5,7 @@ import {useForm} from "@inertiajs/vue3";
 import {notify} from "@/Components/Toastify";
 import {ref} from "vue";
 import TextEditor from "@/Components/TextEditor.vue";
-import ButtonColor from "@/Components/ButtonColor.vue";
+import ButtonColor from "@/Components/Include/ButtonColor.vue";
 
 
 defineOptions({

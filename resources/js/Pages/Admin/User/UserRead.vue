@@ -8,7 +8,7 @@ import dayjs from "dayjs";
 import DashboardLayout from "@/Layouts/DashboardLayout.vue";
 import Breadcrumb from "@/Pages/Admin/Partials/Breadcrumb.vue";
 import Selectbox from "@/Components/Form/Selectbox.vue";
-import ButtonColor from "@/Components/ButtonColor.vue";
+import ButtonColor from "@/Components/Include/ButtonColor.vue";
 import SearchInput from '@/Components/Form/SearchInput.vue';
 import { User, UserProhibit, UserDormant } from "@/types/user";
 

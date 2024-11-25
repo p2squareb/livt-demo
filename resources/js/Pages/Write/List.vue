@@ -5,7 +5,7 @@ import { router } from '@inertiajs/vue3';
 import AppLayout from "@/Layouts/AppLayout.vue";
 import SearchOption from "@/Pages/Write/Partials/SearchOption.vue";
 import Card from "@/Pages/Write/Partials/Card.vue";
-import ButtonColor from '@/Components/ButtonColor.vue';
+import ButtonColor from '@/Components/Include/ButtonColor.vue';
 import { Board, PaginatedWriteList } from "@/types/board";
 
 defineOptions({
