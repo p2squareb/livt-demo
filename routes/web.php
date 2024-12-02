@@ -14,7 +14,7 @@ use Inertia\Inertia;
 require __DIR__.'/auth.php';
 
 Route::get('/', function () {
-    return Inertia::render('Main');
+    return redirect()->route('admin.dashboard');
 })->name('home');
 
 /** 게시판 */
