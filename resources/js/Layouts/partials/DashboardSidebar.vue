@@ -12,6 +12,7 @@ const hoveredMenu = ref<number | null>(null);
 
 const filterMenuByPermissions = (menu: MenuItem[]): MenuItem[] => {
     const permissions = (page.props.menu.permissions as string).split(',');
+    permissions.push('A');
     
     return menu.filter(item => {
         if (!item.id) return true;
