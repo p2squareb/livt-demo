@@ -34,7 +34,7 @@ class UserFactory extends Factory
             'provider' => 'email',
             'last_login_at' => now(),
             'login_ip' => fake()->ipv4(),
-            'group_level' => fake()->numberBetween(1, 2),
+            'group_level' => 1,
             'status' => fake()->numberBetween(1, 4),
             'profile_photo_path' => fake()->randomElement(['cat1.png','cat2.png','cat3.png','cat4.png','cat5.png','dog1.png','dog2.png','dog3.png','dog4.png','dog5.png']),
         ];

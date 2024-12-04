@@ -118,7 +118,7 @@ const getSelectedUserNicknames = () => {
                             <Selectbox 
                                 class="py-[6px]"
                                 v-model="pageRows" 
-                                :options="[{value: '7', name: '15개'}, {value: '30', name: '30개'}, {value: '50', name: '50개'}, {value: '100', name: '100개'}]" 
+                                :options="[{value: '15', name: '15개'}, {value: '30', name: '30개'}, {value: '50', name: '50개'}, {value: '100', name: '100개'}]" 
                             />
                         </div>
                     </div>

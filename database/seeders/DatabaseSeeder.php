@@ -19,10 +19,11 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
+        $accessibleMenus = 'B1,B2,C1,C2,D1,D2,D3,D4,E1,E2';        
         UserGroup::insert([
-            ['name' => '최고관리자', 'level' => 99, 'comment' => '최고관리자', 'created_at' => now(), 'updated_at' => now()],
-            ['name' => '관리자', 'level' => 11, 'comment' => '관리자', 'created_at' => now(), 'updated_at' => now()],
-            ['name' => '일반회원', 'level' => 1, 'comment' => '일반회원', 'created_at' => now(), 'updated_at' => now()],
+            ['name' => '최고관리자', 'level' => 99, 'comment' => '최고관리자', 'accessible_menus' => $accessibleMenus, 'created_at' => now(), 'updated_at' => now()],
+            ['name' => '관리자', 'level' => 11, 'comment' => '관리자', 'accessible_menus' => '', 'created_at' => now(), 'updated_at' => now()],
+            ['name' => '일반회원', 'level' => 1, 'comment' => '일반회원', 'accessible_menus' => '', 'created_at' => now(), 'updated_at' => now()],
         ]);
 
         User::insert([

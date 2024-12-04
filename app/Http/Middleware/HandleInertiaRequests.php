@@ -9,9 +9,17 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Cache;
 use Inertia\Middleware;
+use App\Services\MenuService;
 
 class HandleInertiaRequests extends Middleware
 {
+    private $menuService;
+
+    public function __construct(MenuService $menuService)
+    {
+        $this->menuService = $menuService;
+    }
+
     /**
      * The root template that is loaded on the first page visit.
      *
@@ -42,7 +50,7 @@ class HandleInertiaRequests extends Middleware
             $this->cacheConfig($configName);
         }
 
-        return array_merge(parent::share($request), [
+        $sharedData = [
             // Synchronously...
             'appName' => cache('config.basic')->basic->site_name,
             'notifications_count' => $this->getNotificationsCount(),
@@ -53,10 +61,18 @@ class HandleInertiaRequests extends Middleware
                 : null,
             'flash' => [
                 'status' => fn () => $request->session()->get('status'),
-                'message' => fn () => $request->session()->get('message'), 
+                'message' => fn () => $request->session()->get('message'),
                 'error' => fn () => $request->session()->get('error'),
-            ],
-        ]);
+            ]
+        ];
+
+        if ($request->user() && $request->user()->group_level >= 11) {
+            $sharedData['menu'] = [
+                'permissions' => $this->menuService->getMenuPermissions($request->user()->group_level)
+            ];
+        }
+
+        return array_merge(parent::share($request), $sharedData);
     }
 
     private function cacheConfig($configName): void

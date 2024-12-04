@@ -11,6 +11,7 @@ class UserGroup extends Model
         'name',
         'level',
         'comment',
+        'accessible_menus',
     ];
 
     public function users(): HasMany

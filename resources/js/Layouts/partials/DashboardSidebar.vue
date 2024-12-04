@@ -10,8 +10,30 @@ const sideMenuStore = useDashboardSideMenuStore();
 const isSidebarOpen = computed(() => sideMenuStore.isSidebarOpen);
 const hoveredMenu = ref<number | null>(null);
 
+const filterMenuByPermissions = (menu: MenuItem[]): MenuItem[] => {
+    const permissions = (page.props.menu.permissions as string).split(',');
+    
+    return menu.filter(item => {
+        if (!item.id) return true;
+        
+        if (item.subMenu?.length) {
+            const filteredSubMenu = item.subMenu.filter(subItem => 
+                !subItem.id || permissions.includes(subItem.id)
+            );
+            
+            item.subMenu = filteredSubMenu;
+            
+            return filteredSubMenu.length > 0;
+        }
+        
+        return permissions.includes(item.id);
+    });
+};
+
 const setActiveMenu = (url: string) => {
     const cleanUrl = url.split('?')[0];
+
+    sideMenuStore.menu = filterMenuByPermissions(sideMenuStore.menu);
     
     sideMenuStore.menu.forEach((item) => {
         if (item.subMenu?.length) {

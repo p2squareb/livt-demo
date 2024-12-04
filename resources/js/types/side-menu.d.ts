@@ -1,6 +1,6 @@
 export interface MenuItem {
+    id: string;
     icon: string;
-    pageName: string;
     title: string;
     link: string;
     active: boolean;
@@ -9,8 +9,8 @@ export interface MenuItem {
 }
 
 export interface SubMenuItem {
+    id: string;
     icon: string;
-    pageName: string;
     title: string;
     link: string;
     active: boolean;

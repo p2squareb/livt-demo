@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('name', 50)->comment('그룹명');
             $table->tinyInteger('level')->unique()->unsigned()->comment('그룹 레벨');
             $table->string('comment', 255)->nullable()->comment('메모');
+            $table->string('accessible_menus', 255)->nullable()->comment('접근 가능한 메뉴');
         });
     }
 

@@ -9,7 +9,6 @@ use App\Http\Controllers\SystemController;
 use App\Http\Controllers\UserManageController;
 use App\Http\Controllers\WriteController;
 use Illuminate\Support\Facades\Route;
-use Inertia\Inertia;
 
 require __DIR__.'/auth.php';
 
@@ -63,42 +62,41 @@ Route::group(['prefix' => 'admin', 'middleware' => ['web', 'admin']], function()
     Route::get('/', [DashboardController::class, 'dashboard'])->name('admin.dashboard');
 
     /** 시스템 설정 */
-    Route::get('/system/basic', [SystemController::class, 'basic'])->name('admin.system.basic');
-    Route::post('/system/basic', [SystemController::class, 'basicUpdate'])->name('admin.system.basic.update');
-    Route::get('/system/external', [SystemController::class, 'external'])->name('admin.system.external');
-    Route::post('/system/external', [SystemController::class, 'externalUpdate'])->name('admin.system.external.update');
-    Route::get('/system/policy-terms', [SystemController::class, 'policyTerms'])->name('admin.system.policy-terms');
-    Route::post('/system/policy-terms', [SystemController::class, 'updatePolicyTerms'])->name('admin.system.policy-terms.update');
+    Route::get('/system/basic', [SystemController::class, 'basic'])->name('admin.system.basic')->middleware('menu-access-check:B1');
+    Route::post('/system/basic', [SystemController::class, 'basicUpdate'])->name('admin.system.basic.update')->middleware('menu-access-check:B1');
+    Route::get('/system/policy-terms', [SystemController::class, 'policyTerms'])->name('admin.system.policy-terms')->middleware('menu-access-check:B2');
+    Route::post('/system/policy-terms', [SystemController::class, 'updatePolicyTerms'])->name('admin.system.policy-terms.update')->middleware('menu-access-check:B3');
+    Route::get('/system/external', [SystemController::class, 'external'])->name('admin.system.external')->middleware('menu-access-check:B3');
+    Route::post('/system/external', [SystemController::class, 'externalUpdate'])->name('admin.system.external.update')->middleware('menu-access-check:B3');
 
     /** 회원 */
-    Route::get('/user/list', [UserManageController::class, 'list'])->name('admin.user.list');
-    Route::post('/user/create', [UserManageController::class, 'create'])->name('admin.user.create');
-    Route::post('/user/change-group', [UserManageController::class, 'changeGroup'])->name('admin.user.changeGroup');
-    Route::get('/user/read/{userId}', [UserManageController::class, 'read'])->name('admin.user.read');
-    Route::get('/user/info-extra', [UserManageController::class, 'infoExtra'])->name('admin.user.info-extra');
-    Route::get('/user/search', [UserManageController::class, 'search'])->name('admin.user.search');
-    Route::get('/user/group-list', [UserManageController::class, 'groupList'])->name('admin.user.group-list');
-    Route::post('/user/group-create', [UserManageController::class, 'groupCreate'])->name('admin.user.group-create');
-    Route::put('/user/group-update', [UserManageController::class, 'groupUpdate'])->name('admin.user.group-update');
-    Route::delete('/user/group-delete', [UserManageController::class, 'groupDelete'])->name('admin.user.group-delete');
-    Route::post('/user/prohibit-update', [UserManageController::class, 'prohibitUpdate'])->name('admin.user.prohibit-update');
-    Route::post('/user/send-temp-password', [UserManageController::class, 'sendTempPassword'])->name('admin.user.send-temp-password');
-
-    /** 포인트 */
-    Route::get('/point/setting', [PointController::class, 'setting'])->name('admin.point.setting');
-    Route::post('/point/setting', [PointController::class, 'settingUpdate'])->name('admin.point.setting.update');
-    Route::get('/point/list', [PointController::class, 'list'])->name('admin.point.list');
-    Route::post('/point/create', [PointController::class, 'create'])->name('admin.point.create');
+    Route::get('/user/list', [UserManageController::class, 'list'])->name('admin.user.list')->middleware('menu-access-check:C1');
+    Route::post('/user/create', [UserManageController::class, 'create'])->name('admin.user.create')->middleware('menu-access-check:C1');
+    Route::post('/user/change-group', [UserManageController::class, 'changeGroup'])->name('admin.user.changeGroup')->middleware('menu-access-check:C1');
+    Route::get('/user/read/{userId}', [UserManageController::class, 'read'])->name('admin.user.read')->middleware('menu-access-check:C1');
+    Route::get('/user/info-extra', [UserManageController::class, 'infoExtra'])->name('admin.user.info-extra')->middleware('menu-access-check:C1');
+    Route::get('/user/search', [UserManageController::class, 'search'])->name('admin.user.search')->middleware('menu-access-check:C1');
+    Route::post('/user/prohibit-update', [UserManageController::class, 'prohibitUpdate'])->name('admin.user.prohibit-update')->middleware('menu-access-check:C1');
+    Route::post('/user/send-temp-password', [UserManageController::class, 'sendTempPassword'])->name('admin.user.send-temp-password')->middleware('menu-access-check:C1');
+    Route::get('/user/group-list', [UserManageController::class, 'groupList'])->name('admin.user.group-list')->middleware('menu-access-check:C2');
+    Route::post('/user/group-create', [UserManageController::class, 'groupCreate'])->name('admin.user.group-create')->middleware('menu-access-check:C2');
+    Route::put('/user/group-update', [UserManageController::class, 'groupUpdate'])->name('admin.user.group-update')->middleware('menu-access-check:C2');
+    Route::delete('/user/group-delete', [UserManageController::class, 'groupDelete'])->name('admin.user.group-delete')->middleware('menu-access-check:C2');
 
     /** 게시판 */
-    Route::get('/board/list', [BoardController::class, 'list'])->name('admin.board.list');
-    Route::post('/board/create', [BoardController::class, 'create'])->name('admin.board.create');
-    Route::put('/board/update', [BoardController::class, 'update'])->name('admin.board.update');
-    Route::get('/board/write-list', [BoardController::class, 'writeList'])->name('admin.board.write.list');
-    Route::put('/board/write-delete-status-update', [BoardController::class, 'writeDeleteStatusUpdate'])->name('admin.board.write.delete-status-update');
-    Route::get('/board/comment-list', [BoardController::class, 'commentList'])->name('admin.board.comment.list');
-    Route::put('/board/comment-delete-status-update', [BoardController::class, 'commentDeleteStatusUpdate'])->name('admin.board.comment.delete-status-update');
-    Route::get('/board/report/{targetTable}/{targetId}', [BoardController::class, 'reportList'])->name('admin.board.report.list');
-    Route::get('/board/inquiry-list', [BoardController::class, 'inquiryList'])->name('admin.board.inquiry.list');
-    Route::put('/board/inquiry-answer', [BoardController::class, 'inquiryAnswer'])->name('admin.board.inquiry.answer');
+    Route::get('/board/list', [BoardController::class, 'list'])->name('admin.board.list')->middleware('menu-access-check:D1');
+    Route::post('/board/create', [BoardController::class, 'create'])->name('admin.board.create')->middleware('menu-access-check:D1');
+    Route::put('/board/update', [BoardController::class, 'update'])->name('admin.board.update')->middleware('menu-access-check:D1');
+    Route::get('/board/write-list', [BoardController::class, 'writeList'])->name('admin.board.write.list')->middleware('menu-access-check:D2');
+    Route::put('/board/write-delete-status-update', [BoardController::class, 'writeDeleteStatusUpdate'])->name('admin.board.write.delete-status-update')->middleware('menu-access-check:D2');
+    Route::get('/board/comment-list', [BoardController::class, 'commentList'])->name('admin.board.comment.list')->middleware('menu-access-check:D3');
+    Route::put('/board/comment-delete-status-update', [BoardController::class, 'commentDeleteStatusUpdate'])->name('admin.board.comment.delete-status-update')->middleware('menu-access-check:D3');
+    Route::get('/board/inquiry-list', [BoardController::class, 'inquiryList'])->name('admin.board.inquiry.list')->middleware('menu-access-check:D4');
+    Route::put('/board/inquiry-answer', [BoardController::class, 'inquiryAnswer'])->name('admin.board.inquiry.answer')->middleware('menu-access-check:D4');
+
+    /** 포인트 */
+    Route::get('/point/setting', [PointController::class, 'setting'])->name('admin.point.setting')->middleware('menu-access-check:E1');
+    Route::post('/point/setting', [PointController::class, 'settingUpdate'])->name('admin.point.setting.update')->middleware('menu-access-check:E1');
+    Route::get('/point/list', [PointController::class, 'list'])->name('admin.point.list')->middleware('menu-access-check:E2');
+    Route::post('/point/create', [PointController::class, 'create'])->name('admin.point.create')->middleware('menu-access-check:E2');
 });

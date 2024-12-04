@@ -3,6 +3,7 @@
 use App\Http\Middleware\AdminCheck;
 use App\Http\Middleware\BoardAuthCheck;
 use App\Http\Middleware\HandleInertiaRequests;
+use App\Http\Middleware\MenuAccessCheck;
 use Inertia\Inertia;
 use Illuminate\Foundation\Application;
 use Illuminate\Foundation\Configuration\Exceptions;
@@ -20,6 +21,7 @@ return Application::configure(basePath: dirname(__DIR__))
         $middleware->alias([
             'admin' => AdminCheck::class,
             'board-auth-check' => BoardAuthCheck::class,
+            'menu-access-check' => MenuAccessCheck::class,
         ]);
         $middleware->web(append: [
             HandleInertiaRequests::class,

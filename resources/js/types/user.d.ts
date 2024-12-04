@@ -3,6 +3,7 @@ export interface UserGroup {
     name: string;
     level: number;
     comment: string;
+    accessible_menus: string;
     created_at: string;
     users_count: number;
 }

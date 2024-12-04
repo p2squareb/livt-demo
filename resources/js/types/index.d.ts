@@ -22,4 +22,7 @@ export type PageProps<
         message: string;
         error: string;
     };
+    menu: {
+        permissions: string;
+    };
 };

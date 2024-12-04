@@ -21,18 +21,19 @@ use Illuminate\Support\Str;
 use Illuminate\Validation\Rules\Password;
 use Illuminate\Validation\Rule;
 use Inertia\Inertia;
+use App\Services\MenuService;
 
 class UserManageController extends Controller
 {
     private BoardService $boardService;
     private FileService $fileService;
-    private PointService $pointService;
+    private MenuService $menuService;
 
-    public function __construct(BoardService $boardService, FileService $fileService, PointService $pointService) 
+    public function __construct(BoardService $boardService, FileService $fileService, MenuService $menuService) 
     {
         $this->boardService = $boardService;
         $this->fileService = $fileService;
-        $this->pointService = $pointService;
+        $this->menuService = $menuService;
     }
 
     public function list(Request $request) 
@@ -158,7 +159,7 @@ class UserManageController extends Controller
 
         $query->filter($request->only(['group', 'status', 'searchString']));
 
-        $pageRows = $request->input('pageRows', 7);
+        $pageRows = $request->input('pageRows', 15);
         return $query->orderBy('id', 'desc')->paginate($pageRows)->withQueryString();
     }
 
@@ -204,14 +205,21 @@ class UserManageController extends Controller
             'level.unique' => '이미 사용중인 레벨입니다.'
         ]);
 
+        $sortedMenus = $request->accessibleMenus;
+        asort($sortedMenus);
+        $accessibleMenus = implode(',', $sortedMenus);
+
         $insertData = [
             'name' => $request->name,
             'level' => $request->level,
             'comment' => $request->comment,
+            'accessible_menus' => $accessibleMenus,
         ];
 
         try{
             UserGroup::create($insertData);
+            $this->menuService->clearCache($request->level);
+
             return redirect()->back()->with([
                 'status' => 'success',
                 'message' => '정상적으로 그룹이 생성되었습니다.',
@@ -232,14 +240,21 @@ class UserManageController extends Controller
             'level.unique' => '이미 사용중인 레벨입니다.'
         ]);
 
+        $sortedMenus = $request->accessibleMenus;
+        asort($sortedMenus);
+        $accessibleMenus = implode(',', $sortedMenus);
+        
         $updateData = [
             'name' => $request->name,
             'level' => $request->level,
             'comment' => $request->comment,
+            'accessible_menus' => $accessibleMenus,
         ];
 
         try{
             UserGroup::where('id', $request->id)->update($updateData);
+            $this->menuService->clearCache($request->level);
+
             return redirect()->back()->with([
                 'status' => 'success',
                 'message' => '정상적으로 그룹이 수정되었습니다.',
